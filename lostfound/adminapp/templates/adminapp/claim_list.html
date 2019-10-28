@@ -1,0 +1,75 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    {% for claim in claims %}
+    <div class="w-75 mx-auto my-2 border border-dark p-2">
+
+        <div class="card-group">
+            <div class="card pr-2 mt-4 mb-3 border-top-0 border-left-0 border-bottom-0">
+                <h3 class="card-title text-center">Item</h3>
+                <div class="row no-gutters">
+                    <div class="col">
+                        <img src="{{ claim.item_claimed.image.url }}" style="min-height: 100%;" class="card-img"
+                            alt="...">
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <small>Title</small>
+                            <p class="card-text">{{ claim.item_claimed.title }}</p>
+                            <small>Description</small>
+                            <p class="card-text">{{ claim.item_claimed.description }}</p>
+                            <small>Location</small>
+                            <p class="card-text">{{ claim.item_claimed.location }}</p>
+
+                            <small>Date Posted</small>
+                            <p class="card-text"><small class="text-muted">{{ claim.item_claimed.When }}</small></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card pl-2 mt-4 mb-3 border-top-0 border-bottom-0 border-right-0">
+                <h3 class="card-title text-center">Claim</h3>
+                <div class="row no-gutters">
+                    <div class="col">
+                        <img src="{{ claim.image.url }}" style="min-height: 100%;" class="card-img" alt="...">
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <small>Claimed by</small>
+                            <p class="card-text"><small class="text-muted">{{ claim.claimed_by }}</small></p>
+                            <small>Description</small>
+                            <p class="card-text">{{ claim.description }}</p>
+                            <small>Location</small>
+                            <p class="card-text">{{ claim.location }}</p>
+
+                            <small>Date Claimed</small>
+                            <p class="card-text"><small class="text-muted">{{ claim.date_claimed }}</small></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <form action="/myadmin/claims/" method="POST" class="text-center">
+            {% csrf_token %}
+            <input id="claim_id" name="claim_id" type="hidden" value="{{ claim.id }}">
+            <input id="status" name="status" type="submit" class="btn" style="background-color: #E4B43A;" value="accept">
+            <input id="status" name="status" type="submit" class="btn btn-danger" value="reject">
+        </form>
+
+    </div>
+    {% endfor %}
+    {% if not claims %}
+    <div class="w-75 mx-auto text-center p-4" style="height: 600px;">
+        <p>Ooopps! Database is empty</p>
+    </div>
+    {% endif %}
+
+
+{% endblock %}

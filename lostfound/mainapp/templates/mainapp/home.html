@@ -1,0 +1,107 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block customstyle %} 
+<link rel="stylesheet" href="{% static 'mainapp/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!--Carousel Wrapper-->
+<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <!--Mask color-->
+            <div class="view">
+                <img class="d-block w-100 carousel-img" src="{% static 'mainapp/binoculars.jpg' %}" alt="search" />
+                <div class="mask rgba-black-slight"></div>
+            </div>
+            
+            <div class="hero">
+                <hgroup>
+                    <h1>LOST AND FOUND</h1>        
+                    <h3>Find Your Lost Items Here!</h3>
+                </hgroup>
+                <a href="{% url 'register' %}" class="sign-up">SIGN UP</a>
+              </div>
+
+            <!--<div class="carousel-caption">
+                <a class="sign-up">SIGN UP</a>
+            </div>-->
+        </div>
+        <div class="carousel-item">
+            <!--Mask color-->
+            <div class="view">
+                <img class="d-block w-100 carousel-img" src="{% static 'mainapp/needle-in-a-haystack.jpg' %}"
+                    alt="search" />
+                <div class="mask rgba-black-slight"></div>
+            </div>
+
+            <div class="hero">
+                <hgroup>
+                    <h1  class="">DID'NT FIND YOUR ITEM?</h1>        
+                    <h3>Leave An Alert!</h3>
+                </hgroup>
+                <a href="{% url 'register' %}" class="sign-up">SIGN UP</a>
+              </div>
+            
+            <!--<div class="carousel-caption">
+                <a class="sign-up">SIGN UP</a>
+            </div>-->
+        </div>
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+    </ol>
+    <!--/.Indicators-->
+</div>
+<!--/.Carousel Wrapper-->
+
+<!-- Guide div-->
+
+<div class="container" style="margin-top: 40px;">
+    <div style="text-align: center;font-weight: bold;">
+        <h1 style="font-family: 'Jomolhari', serif;">Guide</h1>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col text-center">
+            <h2 style="font-family: 'Jomolhari', serif;">Sign up</h2>
+            <img src="{% static 'mainapp/new_reg.png' %}" alt="fill in form" />
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui. </p>
+        </div>
+        <div class="col text-center">
+            <h2 style="font-family: 'Jomolhari', serif;">Search</h2>
+            <img src="{% static 'mainapp/registration_process.png' %}" alt="search for item" />
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui. </p>
+        </div>
+        <div class="col text-center">
+            <h2 style="font-family: 'Jomolhari', serif;">Collect</h2>
+            <img src="{% static 'mainapp/going_for_item.png' %}" alt="collect item" />
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui. </p>
+        </div>
+    </div>
+            
+</div> <!-- /container -->
+
+{% endblock %}

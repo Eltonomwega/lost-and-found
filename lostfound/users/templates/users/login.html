@@ -1,0 +1,31 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container align-items-center" style="margin-bottom: 48px;">
+        <div class="content-section w-50 mx-auto">
+                <div class="rabbit" style="text-align: center;">
+                <img src="https://cdn.pixabay.com/photo/2017/02/22/15/59/rabbit-2089784_960_720.png" alt="Login Picture" style="vertical-align: middle; width: 100px">
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <fieldset class="border p-3 rounded">
+                    <legend class="text-center w-auto p-2">
+                        Log In
+                    </legend>
+                    {{ form|crispy }}
+                    <div class="form-group text-center">
+                            <button class="btn" style="background-color: #E4B43A;" type="submit">Login</button>
+                    </div>
+                    <div class="pt-2 text-center">
+                            <small class="text-muted">
+                                    Don't have an Account? <a class="ml-2" href="{% url 'register' %}">Sign Up</a>
+                            </small>
+                        </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

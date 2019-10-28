@@ -1,0 +1,90 @@
+
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block customstyle %}
+
+<link rel="stylesheet" href="{% static 'mainapp/postitems.css' %}">
+
+
+{% endblock %}
+
+
+  {% bootstrap_css %}
+  {% bootstrap_javascript jquery='full' %}
+  {{ form.media }}
+
+{% block content %}
+  <!--css loader-->
+  <div class="d-flex justify-content-center loader" style="margin-top: 20%;margin-bottom: 50%">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!--end of css loader-->
+
+  <div class="maincontainer container mx-auto">
+    <div class="jumbotron  m-3 pt-4" style="background-color: white;">
+
+
+      <div class="row">
+
+        <div class="col text-light">
+
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+              <legend class="border-bottom mb-4 text-white rounded p-5 text-center font-weight-bolder"
+                style="font-size:30px;background-color: #0A6A93;">
+                New Post
+              </legend>
+              {% bootstrap_form form %}
+
+
+            </fieldset>
+            <button class="btn text-dark" data-toggle="modal" data-target="#claimitem"
+              style="background-color: #E4B43A;" type="submit">Post</button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block scriptsheet %}
+  <script>
+    var myVar;
+
+    const spinner_grow = document.querySelector('.loader');
+    const maincontainer = document.querySelector('.maincontainer');
+
+
+
+    function init() {
+      setTimeout(() => {
+        spinner_grow.style.opacity = 0;
+        spinner_grow.style.display = 'none';
+        spinner_grow.style.margin = '10px auto 0px auto';
+
+        maincontainer.style.display = 'block';
+        setTimeout(() => maincontainer.style.opacity = 1, 50
+        );
+
+      }, 4000);
+
+    }
+    console.log("happy");
+    init();
+  </script>
+
+
+{% endblock %}

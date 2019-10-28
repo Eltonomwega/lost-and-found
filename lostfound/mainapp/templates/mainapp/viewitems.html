@@ -1,0 +1,204 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+    <div class="scrolling-wrapper">
+        <div class="card-item item-all"><span>ALL</span></div>
+        <div class="card-item"><span>Laptops</span></div>
+        <div class="card-item"><span>Charger</span></div>
+        <div class="card-item"><span>Phones</span></div>
+        <div class="card-item"><span>IDS</span></div>
+        <div class="card-item"><span>Wallets & Purses</span></div>
+      </div>
+
+    <div class="container mt-4">
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="{% static 'mainapp/lostdog.jpg' %}" alt="item">
+                    <div class="card-body">
+                        <h4 class="card-title">Lost Dog</h4>
+                        <p class="card-text">Date Found : 01-01-2019</p>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#claimitem"
+                            style="background-color: #E4B43A;">Claim</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="{% static 'mainapp/lostdog.jpg' %}" alt="item">
+                    <div class="card-body">
+                        <h4 class="card-title">Lost Dog</h4>
+                        <p class="card-text">Date Found : 01-01-2019</p>
+                        <button type="button" class="btn " data-toggle="modal" data-target="#claimitem"
+                            style="background-color: #E4B43A;">Claim</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="{% static 'mainapp/lostdog.jpg' %}" alt="item">
+                    <div class="card-body">
+                        <h4 class="card-title">Lost Dog</h4>
+                        <p class="card-text">Date Found : 01-01-2019</p>
+                        <button type="button" class="btn " data-toggle="modal" data-target="#claimitem"
+                            style="background-color: #E4B43A;">Claim</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="{% static 'mainapp/lostdog.jpg' %}" alt="item">
+                    <div class="card-body">
+                        <h4 class="card-title">Lost Dog</h4>
+                        <p class="card-text">Date Found : 01-01-2019</p>
+                        <button type="button" class="btn " data-toggle="modal" data-target="#claimitem"
+                            style="background-color: #E4B43A;">Claim</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container mt-4">
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="{% static 'mainapp/lostdog.jpg' %}" alt="item">
+                    <div class="card-body">
+                        <h4 class="card-title">Lost Dog</h4>
+                        <p class="card-text">Date Found : 01-01-2019</p>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#claimitem"
+                            style="background-color: #E4B43A;">Claim</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="{% static 'mainapp/lostdog.jpg' %}" alt="item">
+                    <div class="card-body">
+                        <h4 class="card-title">Lost Dog</h4>
+                        <p class="card-text">Date Found : 01-01-2019</p>
+                        <button type="button" class="btn " data-toggle="modal" data-target="#claimitem"
+                            style="background-color: #E4B43A;">Claim</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="{% static 'mainapp/lostdog.jpg' %}" alt="item">
+                    <div class="card-body">
+                        <h4 class="card-title">Lost Dog</h4>
+                        <p class="card-text">Date Found : 01-01-2019</p>
+                        <button type="button" class="btn " data-toggle="modal" data-target="#claimitem"
+                            style="background-color: #E4B43A;">Claim</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="{% static 'mainapp/lostdog.jpg' %}" alt="item">
+                    <div class="card-body">
+                        <h4 class="card-title">Lost Dog</h4>
+                        <p class="card-text">Date Found : 01-01-2019</p>
+                        <button type="button" class="btn " data-toggle="modal" data-target="#claimitem"
+                            style="background-color: #E4B43A;">Claim</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade w-100" id="claimitem" tabindex="-1" role="dialog" aria-labelledby="myitem"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" style="width: 100%;" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h2 class="modal-title w-100">Claim Item</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="jumbotron bg-dark m-3 pt-4" style="background-color: gray;">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <img class="card-img-top img-fluid" src="{% static 'mainapp/lostdog.jpg' %}"
+                                        alt="item">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Lost Dog</h4>
+                                        <p class="card-text">Date Found : 01-01-2019</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col text-light">
+                                <form action="">
+                                    <div class="form-group required">
+                                        <label for="" class="control-label">Description</label>
+                                        <textarea class="form-control" name="" id="" cols="40" rows="5"
+                                            placeholder="Briefly describe your item highlighting unique characteristics.."
+                                            required></textarea>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="" class="control-label">Where</label>
+                                        <input class="form-control" style="text-overflow: ellipsis;" type="text" name=""
+                                            id=""
+                                            placeholder="Be as specific as possible e.g. LT 1, STC 1st floor next to HP lab"
+                                            required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col required">
+                                            <label for="" class="control-label">Date</label>
+                                            <input class="form-control" type="date" name="" id="" required>
+                                        </div>
+
+                                        <div class="form-group col required">
+                                            <label class="control-label" for=""
+                                                title="Between this time and what time">From</label>
+                                            <input class="form-control" type="time" name="" id="" required>
+                                        </div>
+
+                                        <div class="form-group col required">
+                                            <label class="control-label" for=""
+                                                title="Between what time and this time">To</label>
+                                            <input class="form-control" type="time" name="" id="" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="" title="Upload an image as proof of ownership">Image</label>
+                                        <small class="text-muted">(optional)</small>
+                                        <label for=""></label>
+                                        <input class="form-control-file" type="file" name="" id="">
+
+                                    </div>
+
+                                    <button type="submit" class="btn" style="background-color: #E4B43A;">Submit Claim</button>
+                                    
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

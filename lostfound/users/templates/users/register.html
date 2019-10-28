@@ -1,0 +1,36 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container align-items-center">
+        <div class="content-section w-50 mx-auto">
+            <div class="p-3 text-center">
+                <img src="{% static '/users/detective.png' %}" alt="lookup">
+            </div>
+                
+            <form action="" method="POST">
+                {% csrf_token %}
+                <fieldset class="border p-3 rounded">
+                    <legend class="text-center w-auto px-2">
+                        <strong>Sign Up</strong> 
+                    </legend>
+                    {{ form | crispy }}
+                    <div class="form-group text-center pt-2">
+                        <!--<button class="btn btn-outline-info" type="submit">Sign Up</button>-->
+                        <button class="btn" style="background-color: #E4B43A;" type="submit">Sign Up</button>
+                    </div>
+                    <div class="pt-2 text-center">
+                        <small class="text-muted">
+                            Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                        </small>
+                    </div>
+                </fieldset>
+            </form>
+
+            
+        </div>
+
+    </div>
+
+{% endblock %}

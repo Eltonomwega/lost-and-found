@@ -1,0 +1,108 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="container text-center mt-4">
+    <h2>Claims</h2>
+</div>
+
+<div class="container my-4 p-2 border rounded" style="background-color: lightgray;">
+
+    <form method="GET">
+
+        <div class="well">
+            <h4 class="mt-0">Filter</h4>
+            <div class="row">
+                <div class="form-group col col-sm-4 col-md-3">
+                    {% render_field filter.form.item_claimed class="form-control" placeholder="Filter by item claimed" %}
+                </div>
+                <div class="form-group col col-sm-4 col-md-3">
+                    {% render_field filter.form.claimed_by class="form-control" palceholder="Filter by claimant"%}
+                </div>
+                <div class="form-group col col-sm-4 col-md-3">
+                    {% render_field filter.form.date_claimed class="form-control" placeholder="Filter by date claimed" %}
+                </div>
+                <div class="form-group col col-sm-4 col-md-3">
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-search"></span> Search
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+
+</div>
+
+
+{% for claim in filter.qs %}
+<div class="w-75 mx-auto my-4 border rounded p-2">
+
+    <div class="card-group">
+        <div class="card pr-2 mt-4 mb-3 border-top-0 border-left-0 border-bottom-0">
+            <h3 class="card-title text-center">Item</h3>
+            <div class="row no-gutters">
+                <div class="col">
+                    <img src="{{ claim.item_claimed.image.url }}"  class="card-img" alt="...">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <small>Title</small>
+                        <p class="card-text">{{ claim.item_claimed.title }}</p>
+                        <small>Description</small>
+                        <p class="card-text">{{ claim.item_claimed.description }}</p>
+                        <small>Location</small>
+                        <p class="card-text">{{ claim.item_claimed.location }}</p>
+                        <small>Date Posted</small>
+                        <p class="card-text"><small class="text-muted">{{ claim.item_claimed.When }}</small></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card pl-2 mt-4 mb-3 border-top-0 border-bottom-0 border-right-0">
+            <h3 class="card-title text-center">Claim</h3>
+            <div class="row no-gutters">
+                <div class="col">
+                    <img src="{{ claim.image.url }}" class="card-img" alt="...">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <small>Claimed by</small>
+                        <p class="card-text"><small class="text-muted">{{ claim.claimed_by }}</small></p>
+                        <small>Description</small>
+                        <p class="card-text">{{ claim.description }}</p>
+                        <small>Location</small>
+                        <p class="card-text">{{ claim.location }}</p>
+
+                        <small>Date of Loss</small>
+                        <p class="card-text"><small class="text-muted">{{ claim.date_of_loss }}</small></p>
+                        <small>Date Claimed</small>
+                        <p class="card-text"><small class="text-muted">{{ claim.date_claimed }}</small></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <form action="/myadmin/claims" method="POST" class="text-center">
+        {% csrf_token %}
+        <input id="claim_id" name="claim_id" type="hidden" value="{{ claim.id }}">
+        <input id="status" name="status" type="submit" class="btn" style="background-color: #E4B43A;" value="accept">
+        <input id="status" name="status" type="submit" class="btn btn-danger" value="reject">
+    </form>
+
+</div>
+{% empty %}
+<div class="w-75 mx-auto text-center p-4" style="height: 600px;">
+    <p>Ooopps! Database is empty</p>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}

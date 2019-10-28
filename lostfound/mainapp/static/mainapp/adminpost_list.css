@@ -1,0 +1,26 @@
+/*
+.container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 5px;
+
+}
+
+.wrapper{
+display:grid;
+grid-template-columns: 150px 1fr;
+grid-template-rows: 50px 1fr 30px;
+grid-template-areas:"item description"
+                    "item status";
+border-radius: 15px;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+}
+
+/*
+grid-template-areas: "head head"
+"nav  main"
+"nav  foot";
+grid-template-rows: 50px 1fr 30px;
+grid-template-columns: 150px 1fr;
+}*/

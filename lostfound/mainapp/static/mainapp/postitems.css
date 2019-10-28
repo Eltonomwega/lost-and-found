@@ -1,0 +1,23 @@
+.active {
+    color: black;
+  }
+
+  .bootstrap-datetimepicker-widget {
+    width: 35%;
+
+  }
+
+  .form-group {
+    color: black !important;
+  }
+
+  .myfieldclass {
+    width: 50%;
+  }
+
+
+  .maincontainer {
+    opacity: 0;
+    display: none;
+    transition: opacity 2s ease-in;
+  }
